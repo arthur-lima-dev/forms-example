@@ -1,2 +1,13 @@
-<p>simple-form works!</p>
+<div class="container">
+  <form [formGroup]="simpleForm" (ngSubmit)="onSubmit()">
+    <h1>Exemplo de um formulário simples</h1>
+    <label> Name:
+      <input (change)="modificarComportamentoForm()" type="text" formControlName="nome">
+    </label>
 
+    <label> Data de Nascimento:
+      <input type="date" formControlName="dataNascimento">
+    </label>
+    <button type="submit" [disabled]="!simpleForm.valid">Submit</button>
+  </form>
+</div>

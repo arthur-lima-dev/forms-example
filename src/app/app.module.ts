@@ -11,6 +11,7 @@ import {MatListModule} from "@angular/material/list";
 import {MatButtonModule} from "@angular/material/button";
 import {MatIconModule} from "@angular/material/icon";
 import { NavBarComponent } from './shared/nav-bar/nav-bar.component';
+import {ReactiveFormsModule} from "@angular/forms";
 
 @NgModule({
   declarations: [
@@ -18,16 +19,17 @@ import { NavBarComponent } from './shared/nav-bar/nav-bar.component';
     SimpleFormComponent,
     NavBarComponent
   ],
-  imports: [
-    BrowserModule,
-    BrowserAnimationsModule,
-    AppRoutingModule,
-    MatToolbarModule,
-    MatSidenavModule,
-    MatListModule,
-    MatButtonModule,
-    MatIconModule
-  ],
+    imports: [
+        BrowserModule,
+        BrowserAnimationsModule,
+        AppRoutingModule,
+        MatToolbarModule,
+        MatSidenavModule,
+        MatListModule,
+        MatButtonModule,
+        MatIconModule,
+        ReactiveFormsModule
+    ],
   providers: [],
   bootstrap: [AppComponent],
   schemas: [CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA]
