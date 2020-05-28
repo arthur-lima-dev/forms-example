@@ -12,13 +12,15 @@ import {MatIconModule} from "@angular/material/icon";
 import {NavBarComponent} from './shared/nav-bar/nav-bar.component';
 import {ReactiveFormsModule} from "@angular/forms";
 import {MatInputModule} from "@angular/material/input";
-import { FormularioSimplesComponent } from './pages/simple-form/formulario-simples.component';
+import {FormularioSimplesComponent} from './pages/simple-form/formulario-simples.component';
+import {FormularioReativoComponent} from './pages/home/formulario-reativo.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     FormularioSimplesComponent,
-    NavBarComponent
+    NavBarComponent,
+    FormularioReativoComponent
   ],
   imports: [
     BrowserModule,

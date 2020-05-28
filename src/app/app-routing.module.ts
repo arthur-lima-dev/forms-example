@@ -1,9 +1,12 @@
-import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
-import { FormularioSimplesComponent } from './pages/simple-form/formulario-simples.component';
+import {NgModule} from '@angular/core';
+import {RouterModule, Routes} from '@angular/router';
+import {FormularioSimplesComponent} from './pages/simple-form/formulario-simples.component';
+import {FormularioReativoComponent} from './pages/home/formulario-reativo.component';
 
 const routes: Routes = [
-  { path: 'fomulario-simples', component: FormularioSimplesComponent }
+  {path: '', redirectTo: '/formulario-reativo', pathMatch: 'full'},
+  {path: 'formulario-reativo', component: FormularioReativoComponent},
+  {path: 'fomulario-simples', component: FormularioSimplesComponent}
 ];
 
 @NgModule({
