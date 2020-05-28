@@ -10,6 +10,6 @@ export class PessoaModel {
 }
 
 @Injectable()
-export class SimpleFormBuilderService extends AbstractFormBuilder<PessoaModel>{
+export class FormularioSimplesBuilderService extends AbstractFormBuilder<PessoaModel>{
 
 }

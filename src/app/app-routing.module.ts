@@ -1,9 +1,9 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { SimpleFormComponent } from './pages/simple-form/simple-form.component';
+import { FormularioSimplesComponent } from './pages/simple-form/formulario-simples.component';
 
 const routes: Routes = [
-  { path: 'fomulario-simples', component: SimpleFormComponent }
+  { path: 'fomulario-simples', component: FormularioSimplesComponent }
 ];
 
 @NgModule({

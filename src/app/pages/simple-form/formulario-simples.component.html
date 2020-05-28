@@ -9,7 +9,7 @@
         <div class="row">
           <mat-form-field class="col">
             <mat-label>Nome</mat-label>
-            <input matInput (change)="modificarComportamentoForm()" type="text" formControlName="nome">
+            <input matInput (change)="modificarComportamentoFormulario()" type="text" formControlName="nome">
           </mat-form-field>
         </div>
 
@@ -26,7 +26,7 @@
         </div>
 
         <div class="text-right mt-2">
-          <button mat-raised-button color="secondary" type="submit" [disabled]="simpleForm.invalid">Salvar</button>
+          <button mat-raised-button class="btn btn-success" type="submit" [disabled]="simpleForm.invalid">Salvar</button>
         </div>
       </form>
     </div>
