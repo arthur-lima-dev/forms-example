@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import {FormControl, FormGroup} from "@angular/forms";
+import {Component, OnInit} from '@angular/core';
+import {FormGroup} from "@angular/forms";
 import {PessoaModel, SimpleFormBuilderService} from "./simple-form-builder-service";
 
 @Component({
@@ -10,10 +10,7 @@ import {PessoaModel, SimpleFormBuilderService} from "./simple-form-builder-servi
 })
 export class SimpleFormComponent implements OnInit {
 
-  simpleForm: FormGroup = new FormGroup({
-                                           firstName: new FormControl(''),
-  lastName: new FormControl(''),
-});
+  simpleForm: FormGroup;
 
   constructor(
     private simpleFormBuilderService: SimpleFormBuilderService
@@ -27,15 +24,15 @@ export class SimpleFormComponent implements OnInit {
    this.simpleForm = this.simpleFormBuilderService.buildForm(new PessoaModel());
   }
 
-  onSubmit(){
-    console.log(this.simpleFormBuilderService.formReferenceControls);
+  submeterFormulario(){
+    console.log(this.simpleForm.value);
   }
 
   modificarComportamentoForm() {
     if(this.simpleFormBuilderService.formReferenceControls.nome?.value){
-      this.simpleFormBuilderService.formReferenceControls.dataNascimento.disable()
+      this.simpleFormBuilderService.formReferenceControls.apelido.disable()
     }else {
-      this.simpleFormBuilderService.formReferenceControls.dataNascimento.enable()
+      this.simpleFormBuilderService.formReferenceControls.apelido.enable()
     }
   }
 }
