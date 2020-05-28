@@ -1,6 +1,6 @@
-import {Component, OnInit} from '@angular/core';
-import {FormGroup} from "@angular/forms";
-import {PessoaModel, FormularioSimplesBuilderService} from "./formulario-simples-builder-service";
+import { Component, OnInit } from '@angular/core';
+import { FormGroup } from "@angular/forms";
+import { PessoaVM, FormularioSimplesBuilderService } from "./formulario-simples-builder-service";
 
 @Component({
   selector: 'app-formulario-simples',
@@ -10,7 +10,8 @@ import {PessoaModel, FormularioSimplesBuilderService} from "./formulario-simples
 })
 export class FormularioSimplesComponent implements OnInit {
 
-  simpleForm: FormGroup;
+  pessoaFormGroup: FormGroup;
+  exibeTextoSubmissao: boolean = false;
 
   constructor(
     private formularioSimplesBuilderService: FormularioSimplesBuilderService
@@ -21,18 +22,22 @@ export class FormularioSimplesComponent implements OnInit {
   }
 
   private inicializarFormulario() {
-   this.simpleForm = this.formularioSimplesBuilderService.buildForm(new PessoaModel());
+    this.pessoaFormGroup = this.formularioSimplesBuilderService.construirFormGroup(new PessoaVM());
   }
 
-  submeterFormulario(){
-    console.log(this.simpleForm.value);
+  verificarValoresFormulario() {
+    return JSON.stringify(this.pessoaFormGroup?.value);
   }
 
   modificarComportamentoFormulario() {
-    if(this.formularioSimplesBuilderService.formReferenceControls.nome?.value){
-      this.formularioSimplesBuilderService.formReferenceControls.apelido.disable()
-    }else {
-      this.formularioSimplesBuilderService.formReferenceControls.apelido.enable()
-    }
+    this.formularioSimplesBuilderService.atualizarComportamentoControlAltura();
+    this.pessoaFormGroup.updateValueAndValidity();
+  }
+
+  /**
+   * Nesse método poderiamos chamar métodos que irão tratar a informação adquirida na tela e em seguinda utilizar um serviço para enviar para o back-end
+   */
+  submeterFormulario() {
+    this.exibeTextoSubmissao = true;
   }
 }
