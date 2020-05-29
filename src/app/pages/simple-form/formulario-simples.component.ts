@@ -1,6 +1,6 @@
-import { Component, OnInit } from '@angular/core';
-import { FormGroup } from "@angular/forms";
-import { PessoaVM, FormularioSimplesBuilderService } from "./formulario-simples-builder-service";
+import {Component, OnInit} from '@angular/core';
+import {FormGroup} from "@angular/forms";
+import {FormularioSimplesBuilderService, PessoaVM} from "./formulario-simples-builder-service";
 
 @Component({
   selector: 'app-formulario-simples',
@@ -15,7 +15,8 @@ export class FormularioSimplesComponent implements OnInit {
 
   constructor(
     private formularioSimplesBuilderService: FormularioSimplesBuilderService
-  ) { }
+  ) {
+  }
 
   ngOnInit(): void {
     this.inicializarFormulario();
@@ -26,7 +27,7 @@ export class FormularioSimplesComponent implements OnInit {
   }
 
   verificarValoresFormulario() {
-    return JSON.stringify(this.pessoaFormGroup?.value);
+    return JSON.stringify(this.pessoaFormGroup?.value, null, 2);
   }
 
   modificarComportamentoFormulario() {
@@ -35,7 +36,8 @@ export class FormularioSimplesComponent implements OnInit {
   }
 
   /**
-   * Nesse método poderiamos chamar métodos que irão tratar a informação adquirida na tela e em seguinda utilizar um serviço para enviar para o back-end
+   * Nesse método poderiamos chamar métodos que irão tratar a informação adquirida na tela e
+   * em seguinda utilizar um serviço para enviar para o back-end
    */
   submeterFormulario() {
     this.exibeTextoSubmissao = true;

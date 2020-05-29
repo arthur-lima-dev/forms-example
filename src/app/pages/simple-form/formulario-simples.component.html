@@ -17,7 +17,7 @@
         <div class="row">
           <mat-form-field class="col-9">
             <mat-label>Apelido</mat-label>
-            <input matInput (change)="modificarComportamentoFormulario()" type="text" formControlName="apelido">
+            <input (keyup)="modificarComportamentoFormulario()" formControlName="apelido" matInput type="text">
           </mat-form-field>
 
           <mat-form-field class="col-3">
@@ -28,10 +28,22 @@
 
         <div class="text-right mt-2">
           <button mat-raised-button class="btn btn-success" type="submit"
-            [disabled]="pessoaFormGroup.invalid">Salvar</button>
+                  [disabled]="pessoaFormGroup.invalid">Salvar
+          </button>
         </div>
       </form>
     </div>
+
+    <div class="alert alert-info" role="alert">
+      <div class="row d-flex justify-content-center">
+        <strong>Valores (JSON)</strong>
+      </div>
+
+      <div class="row d-flex justify-content-center">
+        <pre>{{verificarValoresFormulario()}}</pre>
+      </div>
+    </div>
+
   </div>
 </div>
 
@@ -42,23 +54,44 @@
       <mat-icon>close</mat-icon>
     </button>
 
-    <h4 class="alert-heading">Vish!! Acho que tá faltando alguma coisa 🕵️‍♂️</h4>
+    <h4 class="alert-heading">
+      <span class="material-icons">device_unknown</span>️
+      Vish!! Acho que tá faltando alguma coisa
+    </h4>
     <hr>
+
     <p>
-      Vi que você tentou salvar, só que eu não fiz essa parte 😅. Mas caso queira avançar, acredito que terá de criar um
-      serviço para enviar as informações do front-end para o back-end
-      através de uma requisição http.
+      Vi que você tentou salvar, só que eu não fiz essa parte. <span class="material-icons">pest_control</span>
+      <br>
+      Caso queira avançar sugiro que crie um serviço para enviar as informações do front-end
+      para o back-end através de uma requisição http.
     </p>
 
-    <p>Ps: se valer de alguma ajuda eu já fiz um método chamado "submeterFormulario" você pode usar ele para salvar. Boa
-      sorte! 😏</p>
+    <p>Ps: se valer de alguma ajuda eu já fiz um método chamado "submeterFormulario" e acho você pode usá-lo para
+      salvar.
+      <br>
+      Boa sorte! <span class="material-icons">directions_run</span></p>
   </div>
 
   <div class="alert alert-warning" role="alert">
-    <h4 class="alert-heading">O que é isso tudo?</h4>
-    <p>Aqui iremos ver e entender o resultado do que esta sendo digitado no formulário.</p>
+    <h4>Regras de negócio aplicadas:</h4>
+    <ul>
+      <li>O Campos nome e altura são de preenchimento obrigatório</li>
+      <li>Ao preencher o apelido o campo altura passa a ter um valor mínimo de 1.20 e máximo de 2.20</li>
+    </ul>
 
-    <hr>
-    <p>Valores do formulário (JSON) = {{verificarValoresFormulario()}}</p>
+    <br>
+    <h4><span class="material-icons">contact_support</span> Dúvidas</h4>
+    <h5 class="alert-heading"> - Quem vai pedir um cadastro com uma regra tão estranha assim?</h5>
+    <p>
+      De fato a regra da altura é estranha, mas acredite quando eu digo que seu cliente poderá
+      ter requisitos bem peculiares. <span class="material-icons">sentiment_satisfied</span>
+    </p>
+
+    <h5 class="alert-heading"> - Onde foram parar os valores digitados?</h5>
+    <p>
+      Estão no objeto do tipo FormGroup e também estão no objeto formControls da classe FormularioSimplesBuilderService
+      que criamos para facilitar nossa vida. Vamos entender melhor sobre isso duranto o tutorial.
+    </p>
   </div>
 </div>
