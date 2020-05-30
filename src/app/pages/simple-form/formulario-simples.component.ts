@@ -22,24 +22,34 @@ export class FormularioSimplesComponent implements OnInit {
     this.inicializarFormulario();
   }
 
-  private inicializarFormulario() {
-    this.pessoaFormGroup = this.formularioSimplesBuilderService.construirFormGroup(new PessoaVM());
-  }
-
+  /**
+   * Retornar os valores do formulário no formato Json
+   */
   verificarValoresFormulario() {
     return JSON.stringify(this.pessoaFormGroup?.value, null, 2);
   }
 
+  /**
+   * Este método esta sendo chamado pelo html toda vez que é digitado alguma iformação no campo apelido.
+   * as regras de como os campos devem se comportar estão no FormulárioSimplesBuilderService
+   */
   modificarComportamentoFormulario() {
     this.formularioSimplesBuilderService.atualizarComportamentoControlAltura();
-    this.pessoaFormGroup.updateValueAndValidity();
   }
 
   /**
-   * Nesse método poderiamos chamar métodos que irão tratar a informação adquirida na tela e
-   * em seguinda utilizar um serviço para enviar para o back-end
+   * Nesse método poderiamos chamar métodos que irão tratar as informações adquiridas no formulário
+   * e em seguinda utilizar um serviço para enviar para o back-end (Quem sabe a gente não faz isso um dia)
    */
   submeterFormulario() {
     this.exibeTextoSubmissao = true;
+  }
+
+  /**
+   * Dica: sempre bom separar bem os métodos e suas responsabilidades, alguns programadores costumam
+   * criar métodos gigantes que fazem milhares de coisas ao mesmo tempo. Não seja essa pessoa!
+   */
+  private inicializarFormulario() {
+    this.pessoaFormGroup = this.formularioSimplesBuilderService.construirFormGroup(new PessoaVM());
   }
 }

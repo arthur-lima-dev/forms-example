@@ -1,6 +1,6 @@
-import { Injectable } from "@angular/core";
-import { AbstractFormBuilder } from "src/app/shared/form-builer/abstract-form-builer";
-import { Validators } from '@angular/forms';
+import {Injectable} from "@angular/core";
+import {AbstractFormBuilder} from "src/app/shared/form-builer/abstract-form-builer";
+import {Validators} from '@angular/forms';
 
 /**
  * Model, DTO, VM... Tanto faz!
@@ -19,20 +19,22 @@ export class PessoaVM {
  * A ideia é armazenar nesse serviço todas as regras de validação do formulário
  */
 @Injectable()
-export class FormularioSimplesBuilderService extends AbstractFormBuilder<PessoaVM>{
+export class FormularioSimplesBuilderService extends AbstractFormBuilder<PessoaVM> {
 
   /** Podem ser um validator ou vários como para o campo default */
   private alturaValidatorDefault = Validators.required;
 
-  inicializarValidacoesIniciais() {
+  /**
+   * Regra de negócio 1: os campos nome e altura são de preenchimento obrigatório
+   */
+  inicializarValidacoesDefault() {
     this.atualizarValidadores(this.formControls.nome, Validators.required);
     this.atualizarValidadores(this.formControls.altura, this.alturaValidatorDefault);
   }
 
   /**
-   * 1) Capturamos os validators já presentes
-   * 2) Regra de negócio: Quando o apelido for preenchido então a altura passa a ter uma validação mínima de 1.20 a 2.20. 
-   * Caso contrário então reseta para o valor default
+   * Regra de negócio 2: Quando o apelido for preenchido então a altura passa a ter uma validação mínima de 1.20 a 2.20.
+   * Caso contrário então passa o validator default
    */
   atualizarComportamentoControlAltura() {
     const alturaValidators = this.formControls.apelido?.value ? [

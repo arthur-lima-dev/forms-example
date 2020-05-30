@@ -1,4 +1,4 @@
-<!-- FORMULÁRIO - estam sendo utilizadas classes de estilização do Bootstrap e campos do Angular Material-->
+<!-- FORMULÁRIO - estão sendo utilizadas classes de estilização do Bootstrap e campos do Angular Material -->
 <div class="container-fluid d-flex justify-content-center">
   <div class="card bg-light">
     <div class="card-header text-center">
@@ -47,7 +47,7 @@
   </div>
 </div>
 
-<!-- RESULTADO - seção exclusíva a fins didáticos-->
+
 <div class="container-fluid mt-2">
   <div *ngIf="exibeTextoSubmissao" class="alert alert-danger">
     <button mat-mini-fab color="warn" class="float-right" (click)="exibeTextoSubmissao = !exibeTextoSubmissao">
@@ -79,8 +79,8 @@
       <li>O Campos nome e altura são de preenchimento obrigatório</li>
       <li>Ao preencher o apelido o campo altura passa a ter um valor mínimo de 1.20 e máximo de 2.20</li>
     </ul>
+    <hr>
 
-    <br>
     <h4><span class="material-icons">contact_support</span> Dúvidas</h4>
     <h5 class="alert-heading"> - Quem vai pedir um cadastro com uma regra tão estranha assim?</h5>
     <p>
@@ -91,7 +91,7 @@
     <h5 class="alert-heading"> - Onde foram parar os valores digitados?</h5>
     <p>
       Estão no objeto do tipo FormGroup e também estão no objeto formControls da classe FormularioSimplesBuilderService
-      que criamos para facilitar nossa vida. Vamos entender melhor sobre isso duranto o tutorial.
+      que criamos para facilitar nossa vida. Vamos entender melhor sobre isso durante o tutorial.
     </p>
   </div>
 </div>
