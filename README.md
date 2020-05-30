@@ -13,5 +13,12 @@ Acesse o blog [Dev Friends - Formulários Reativos](https://developers-friends.g
     - **Reactive Forms (Formulários Reativos)** - Introdução aos formulários reativos
         - **formulario-simples** - Ponto de partida para entender os formulários reativos
 
+# Pressupostos
+  - Irei do ponto de partida de que você ja sabe criar e configurar um projeto Angular IO
+  - Você saber ao menos o básico de *Reactive Forms*. Caso não esteja seguro procure um tutorial para prosseguir aqui.
+  - Vale lembrar que as bibliotecas utilizadas e suas respectivas versões estão disponíveis no package.json
+
+
+**O objetivo é nos aprofundar em algumas soluções para facilitar o uso dos Formulários reativos**
 
 Esse e outros artigos você encontra no site [Dev Friends](https://developers-friends.gitbook.io/blog/).
