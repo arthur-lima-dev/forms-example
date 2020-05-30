@@ -23,6 +23,14 @@ export class FormularioSimplesComponent implements OnInit {
   }
 
   /**
+   * Este método esta sendo chamado pelo html toda vez que é digitado alguma iformação no campo apelido.
+   * As regras de como os campos devem se comportar estão no FormulárioSimplesBuilderService
+   */
+  modificarComportamentoFormulario() {
+    this.formularioSimplesBuilderService.atualizarComportamentoControlAltura();
+  }
+
+  /**
    * Retornar os valores do formulário no formato Json
    */
   verificarValoresFormulario() {
@@ -30,11 +38,11 @@ export class FormularioSimplesComponent implements OnInit {
   }
 
   /**
-   * Este método esta sendo chamado pelo html toda vez que é digitado alguma iformação no campo apelido.
-   * as regras de como os campos devem se comportar estão no FormulárioSimplesBuilderService
+   * Dica: sempre bom separar bem os métodos e suas responsabilidades, alguns programadores costumam
+   * criar métodos gigantes que fazem milhares de coisas ao mesmo tempo. Não seja essa pessoa!
    */
-  modificarComportamentoFormulario() {
-    this.formularioSimplesBuilderService.atualizarComportamentoControlAltura();
+  private inicializarFormulario() {
+    this.pessoaFormGroup = this.formularioSimplesBuilderService.construirFormGroup(new PessoaVM());
   }
 
   /**
@@ -45,11 +53,4 @@ export class FormularioSimplesComponent implements OnInit {
     this.exibeTextoSubmissao = true;
   }
 
-  /**
-   * Dica: sempre bom separar bem os métodos e suas responsabilidades, alguns programadores costumam
-   * criar métodos gigantes que fazem milhares de coisas ao mesmo tempo. Não seja essa pessoa!
-   */
-  private inicializarFormulario() {
-    this.pessoaFormGroup = this.formularioSimplesBuilderService.construirFormGroup(new PessoaVM());
-  }
 }
