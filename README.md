@@ -1,6 +1,5 @@
 # Reactive Forms (Formulários Reativos)
 
-## Uma breve explicação
 ![Formulário Simples](https://github.com/arthur-lima-dev/angular-forms-example/blob/master/src/assets/reactive-forms.gif)
 
 Os formulários reativos ajudam nas validações das informações que serão inseridas nos campos do formulário. Com o auxílio deles podemos colocar ou retirar a obrigatoriedade (ou qualquer outro tipo de validação) dos campos do formulário, ou seja, com os formulários reativos nosso relacionamento formulários será bem mais fácil.
