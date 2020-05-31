@@ -16,12 +16,12 @@ export class PessoaVM {
 }
 
 /**
- * A ideia é armazenar nesse serviço todas as regras de validação do formulário
+ * A ideia é armazenar nesse serviço todas as regras de validações do formulário
  */
 @Injectable()
 export class FormularioSimplesBuilderService extends AbstractFormBuilder<PessoaVM> {
 
-  /** Podem ser um validator ou vários como para o campo default */
+  /** Podem ser um ou vários validator como para o campo default */
   private alturaValidatorDefault = Validators.required;
 
   /**
@@ -33,8 +33,11 @@ export class FormularioSimplesBuilderService extends AbstractFormBuilder<PessoaV
   }
 
   /**
-   * Regra de negócio 2: Quando o apelido for preenchido então a altura passa a ter uma validação mínima de 1.20 a 2.20.
-   * Caso contrário então passa o validator default
+   * Regra de negócio 2: Quando o apelido for preenchido então a altura passa a ter uma validação mínima de 1.20
+   * e máxima de 2.20. Caso contrário então passa o validator default
+   *
+   * obs: repare no this.formControls.apelido.value "apeli passou a ter um novo atributo o '.value' isso porque no
+   * objeto 'formControls' ele tem uma referência de um FormControl".
    */
   atualizarComportamentoControlAltura() {
     const alturaValidators = this.formControls.apelido?.value ? [

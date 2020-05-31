@@ -11,7 +11,7 @@ export abstract class AbstractFormBuilder<T> {
   ) { }
 
   /**
-   * Quem implementar será obrigado a informar se tem alguma validação a ser feita no form
+   * Quem implementar será obrigado a informar se tem alguma validação padrão a ser feita no form
    */
   abstract inicializarValidacoesDefault();
 
