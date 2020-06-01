@@ -15,7 +15,7 @@ Acesse o blog [Dev Friends - Formulários Reativos](https://developers-friends.g
 
 # Pressupostos
   - Irei do ponto de partida de que você ja sabe criar e configurar um projeto Angular IO
-  - Você saber ao menos o básico de *Reactive Forms*. Caso não esteja seguro procure um tutorial para prosseguir aqui.
+  - De que você sabe ao menos o básico de *Reactive Forms*. Caso não esteja seguro procure um tutorial para prosseguir aqui.
   - Vale lembrar que as bibliotecas utilizadas e suas respectivas versões estão disponíveis no package.json
 
 
